@@ -2,9 +2,9 @@ Optimizer tools written in Matlab. Including MCMC, DEMC, Ensemble Kalman filter,
 
 All input and output of functions are single structure arrays. 
 
-##### function DEMC
+#### function DEMC
 Differential Evolution / Differential Evolution Markov Chain. In the case of **'DE'**, this function also plot a figure for the objective function of all generations.
-###### Input fields
+##### Input fields
 - func       : evaluation (objective) function.
 - bound      : 2 X n matrix, where n is the parameter dimension. Lower (first row) and upper(second row) bounds of parameter.
 - size       : size of population.
@@ -19,15 +19,15 @@ Differential Evolution / Differential Evolution Markov Chain. In the case of **'
 - simplex    :(optional) 1 X n logical maxtrix. 'true' specifies the parameters that should be positive and sum up to 1.
 name       :(optional) name of output figure. Default 'DEMCtest'.
 
-###### Output fields
+##### Output fields
 - chain      : population at each generation.
 - obj        : evaluation (objective) function value at each generation.
 - best       : best individual at last generation.
 
 
-##### function MCMC
+#### function MCMC
 Markov Chain Monte Carlo with Random-Walk Metropolis.
-###### Input fields
+##### Input fields
 - One of 'loc', 'funcPrior', 'bound'(in descending priority) must be
 - specified. 
 - life      : length of Markov Chain.
@@ -39,27 +39,27 @@ Markov Chain Monte Carlo with Random-Walk Metropolis.
 - bound     : (optional) 2 X n matrix, where n is the parameter dimension. 
 - Lower(first row) and upper(second row) bounds of parameter.
  
-###### Output fields
+##### Output fields
 - chain     : m X n matrix, where m = length and n = parameter dimension.
 - time      : m X 1 matrix, time stamp of each step.
 
-###### Warning   : Using 'bound' might break detailed balance and result in gibberish posterior. Not recommended.
+##### Warning   : Using 'bound' might break detailed balance and result in gibberish posterior. Not recommended.
 
 
-##### function EnKF
+#### function EnKF
 Ensemble Kalman filter. Updated forecast and analysis states using observation and ensemble Kalman filter.
 
-###### Input fields
+##### Input fields
 - R        : measurement error (sigma).
 - Fstates  : forecast states. 1 X n matrix, n = number of state
 - Astates  : analysis states. 1 X n matrix.
 - obs      : observation states. Scaler.
 - func     : model operator, from current state to next state. 
 
-###### Output 
+##### Output 
 The same structue with updated Fstates and Astates, as well as estimation of model error (C).
 
-##### function ModAv
+#### function ModAv
 Multi-model averaging function. Supported methods:
 - EWA    : Equal Weights Averaging
 - BGA    : Bates-Granger Averaging
@@ -70,7 +70,7 @@ Multi-model averaging function. Supported methods:
 - MMA    : Mallows Model Averaging
 - MMAd   : Mallows Model Averaging (lie on simplex)
  
-###### Input fields
+##### Input fields
 - Xcali  : m1 X n model prediction matrix for calibration period. m1 = time
 - length of calibration period, n = model number.
 - Ycali  : m1 X 1 observation matrix for calibration period.
@@ -79,7 +79,7 @@ Multi-model averaging function. Supported methods:
 - p      : 1 X n matrix of model parameter numbers.
 - method : abbreviation of method.
 
-###### Output fields
+##### Output fields
 - weight    : model weights.
 - RMSEcali  : RMSE of calibration period. 
 - RMSEeval  : RMSE of evaluation period.
@@ -87,12 +87,12 @@ Multi-model averaging function. Supported methods:
 - obj       : (BMA, MMA and MMAd) objective function value for all iterations.
 - sigma     : (BMA) optimized model sigma.
 
-###### Warning: Method BMA could be slow and unstable.
+##### Warning: Method BMA could be slow and unstable.
 
-##### function ABCPMC
+#### function ABCPMC
 Approximate Bayesian Computing-Population Monte Carlo method.
 
-###### Input fields
+##### Input fields
 - obs         : 1 X d, d = dimension of target 
 - bound       : 2 X n matrix, where n is the parameter dimension. Lower
 - (first row) and upper(second row) bounds of parameter.
@@ -103,7 +103,7 @@ Approximate Bayesian Computing-Population Monte Carlo method.
 - epsl        : 1 X i epsilon matrix, where i is the number of generations.
 - size        : population size
 
-##### Output 
+#### Output 
 The same strucuture with extra fields.
 - inds     : individuals (parameters) for all generations.
 - summar   : modeled target at all generations.
