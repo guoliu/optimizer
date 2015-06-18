@@ -2,6 +2,8 @@ Optimizer tools written in Matlab. Including MCMC, DEMC, Ensemble Kalman filter,
 
 All input and output of functions are single structure arrays. 
 
+
+
 #### function DEMC
 Differential Evolution / Differential Evolution Markov Chain. In the case of **'DE'**, this function also plot a figure for the objective function of all generations.
 ##### Input fields
@@ -23,6 +25,7 @@ name       :(optional) name of output figure. Default 'DEMCtest'.
 - chain      : population at each generation.
 - obj        : evaluation (objective) function value at each generation.
 - best       : best individual at last generation.
+
 
 
 #### function MCMC
@@ -59,6 +62,8 @@ Ensemble Kalman filter. Updated forecast and analysis states using observation a
 ##### Output 
 The same structue with updated Fstates and Astates, as well as estimation of model error (C).
 
+
+
 #### function ModAv
 Multi-model averaging function. Supported methods:
 - EWA    : Equal Weights Averaging
@@ -88,6 +93,8 @@ Multi-model averaging function. Supported methods:
 - sigma     : (BMA) optimized model sigma.
 
 ##### Warning: Method BMA could be slow and unstable.
+
+
 
 #### function ABCPMC
 Approximate Bayesian Computing-Population Monte Carlo method.
