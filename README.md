@@ -1,6 +1,6 @@
 Optimizer tools written in Matlab. Including MCMC, DEMC, Ensemble Kalman filter, Approximate Bayesian Computing-Population Monte Carlo, and modeling averaging methods. Most algorithm based on class CEE 290 taught by Prof. [Jasper A. Vrugt](http://faculty.sites.uci.edu/jasper/).
 
-All input and output of functions are single structures with multiple fields. 
+All input and output of functions are single structures with multiple fields. Same fields name were used across different functions and can be piped together for testing purpose. 
 
 
 ## Documentation
