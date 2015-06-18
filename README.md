@@ -20,7 +20,7 @@ Differential Evolution / Differential Evolution Markov Chain. In the case of **'
 - mutation   :(optional) scalar, mutation rate.
 - CR         :(optional) scalar, crossover rate.
 - simplex    :(optional) 1 X n logical maxtrix. 'true' specifies the parameters that should be positive and sum up to 1.
-name       :(optional) name of output figure. Default 'DEMCtest'.
+- name       :(optional) name of output figure. Default 'DEMCtest'.
 
 ##### Output fields
 - chain      : population at each generation.
