@@ -120,7 +120,7 @@ The same strucuture with extra fields.
 
 
 ## Minimal Working Example
-For DEMC and MCMC
+For DEMC and MCMC:
 ```
 %% Finding global minimum with DE
 
@@ -142,7 +142,7 @@ disp(['Global minimum from DE: ' num2str(result.best)])
 pop.func = @(x) 1/3*normpdf(x,-5,1)+2/3*normpdf(x,5,1);
 pop.bound = [-100;100]+1.67;
 
-% Using DEMC. It should only be able to sample both peaks.
+% Using DEMC. It should be able to sample both peaks.
 pop.type = 'DEMC'; pop.life = 1500;
 result = DEMC(pop); burnt = result.chain(pop.life/2:end,:);
 disp(['Mean estimated by DEMC: ' num2str(mean(burnt(:)))])
