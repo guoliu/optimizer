@@ -32,8 +32,7 @@ name       :(optional) name of output figure. Default 'DEMCtest'.
 #### function MCMC
 Markov Chain Monte Carlo with Random-Walk Metropolis.
 ##### Input fields
-- One of 'loc', 'funcPrior', 'bound'(in descending priority) must be
-- specified. 
+One of 'loc', 'funcPrior', 'bound'(in descending priority) must be specified. 
 - life      : length of Markov Chain.
 - func      : liklihood function. Calculates the liklihood from parameter.
 - funcProp  : (optional) proposal distribution function. Make new proposal
